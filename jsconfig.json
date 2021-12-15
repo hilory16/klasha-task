@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "ES6",
+    "paths": {
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "context/*": ["context/*"],
+      "utils/*": ["utils/*"],
+      "hooks/*": ["hooks/*"],
+      "pages/*": ["pages/*"],
+      "theme/*": ["theme/*"],
+      "services/*": ["services/*"],
+      "store/*": ["store/*"],
+      "styles/*": ["styles/*"],
+      "routes/*": ["routes/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}
