@@ -1,96 +1,74 @@
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
-  position: absolute;
-  z-index: 50;
-  top: 30px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  .logo-container {
-    .menu-icon {
-      display: none;
-    }
-  }
-  .header-content {
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  padding-left: 30%;
+  margin-bottom: 36px;
+  .status_bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    ul {
-      margin: 0;
-      padding: 0;
+    .date {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 26px;
+      margin-right: 26px;
+    }
+    .search_bar {
       display: flex;
-      justify-content: between;
       align-items: center;
-      li {
-        margin-right: 26px;
-        img {
-          margin-left: 5px;
-        }
+      padding: 20px;
+      width: 300px;
+      border-bottom: 3px solid ${({ theme }) => theme?.colors?.secondary};
+      .search_icon {
+        margin-right: 16px;
+        width: 24px;
+        height: 24px;
       }
-      li:last-child {
-        margin-right: 0;
-      }
-      a {
-        text-decoration: none;
-        font-size: 16px;
-        line-height: 19px;
-        font-weight: 400;
-        color: ${({ theme }) => theme.colors.primary};
-      }
-      .active {
-        font-weight: bold;
-        position: relative;
-        :before {
-          content: '';
-          height: 8px;
-          width: 8px;
-          background: ${({ theme }) => theme.colors.green3};
-          display: block;
-          border-radius: 50%;
-          position: absolute;
-          top: 24px;
-          left: 50%;
+      input {
+        outline: none;
+        background: ${({ theme }) => theme?.colors?.transparent};
+        color: ${({ theme }) => theme?.colors?.white};
+        height: 30px;
+        width: 100%;
+        font-size: 18px;
+        line-height: 120%;
+        ::plcaeholder {
+          color: ${({ theme }) => theme?.colors?.grey};
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 120%;
         }
       }
     }
   }
-  ${({ theme }) => theme.mediaQueries.medium} {
-    .header-links {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      padding-right: 20px;
-      padding-left: 20px;
-      width: 100%;
-      z-index: 100;
-      background: ${({ theme }) => theme.colors.white};
-      transition: all ease 0.3s;
-      height: ${({ isOpen }) => (isOpen ? 'calc(100vh - 70px)' : '0')};
-      overflow: hidden;
-      ul {
-        display: block;
-        li {
-          margin-bottom: 30px;
-          a {
-            font-size: 20px;
-            line-height: 19px;
-          }
-        }
+  .user_profile {
+    display: flex;
+    align-items: center;
+    .name {
+      text-align: right;
+      margin-right: 25px;
+      .username {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 8px;
+      }
+      .user_role {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        color: ${({ theme }) => theme?.colors?.grey};
       }
     }
-    .logo-container {
-      a {
-        padding-bottom: 0;
+    .avater {
+      width: 72px;
+      height: 72px;
+      img {
+        width: 100%;
+        height: 100%;
       }
-      .menu-icon {
-        display: block;
-      }
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
   }
 `;

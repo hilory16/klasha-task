@@ -25,8 +25,9 @@ const GlobalStyles = createGlobalStyle`
       padding: 0;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-      font-weight: 400;
-      font-family: 'DM Sans', sans-serif;
+      font-family: Poppins;
+      background:${({ theme }) => theme.colors?.primary};
+      color:${({ theme }) => theme.colors?.white};
    }
    body{
       display: flex;
@@ -45,9 +46,11 @@ const GlobalStyles = createGlobalStyle`
       }
    }
    .link {
-      color: inherit;
+      color: ${({ theme }) => theme?.colors?.darkGreen};
       text-decoration: none;
       outline: none;
+      font-weight: 500;
+      font-size: 16px;
    }
    .form-control,
    .form-select {
@@ -56,19 +59,16 @@ const GlobalStyles = createGlobalStyle`
    input,select{
       outline:none;
    }
-   h1,h2,h3,h4,h5,h6{
-      font-family: Tomato Grotesk;
-      font-weight:600;
-   }
-   a{
-      font-family: Tomato Grotesk;
-      font-weight:400;
-   }
+   .widget_introduction {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+    }
    ${override}
    .wrapper{
-      max-width:1120px;
-      margin-right:auto;
-      margin-left:auto;
+      // max-width:1120px;
+      // margin-right:auto;
+      // margin-left:auto;
       padding-right:30px;
       padding-left:30px;
    }
